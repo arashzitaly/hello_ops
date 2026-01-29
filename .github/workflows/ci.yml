@@ -12,6 +12,32 @@ on:
       - main
 
 jobs:
+  quelity:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install -U pip
+          pip install -e ".[dev]"
+
+      - name: Lint (ruff)
+        run: |
+          ruff check .
+
+      - name: Test (pytest)
+        run: |
+          pytest -q
+
+
+
   test:
     runs-on: ubuntu-latest
     steps:
@@ -35,3 +61,4 @@ jobs:
       - name: Test (pytest)
         run: |
           pytest -q
+        
