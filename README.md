@@ -19,6 +19,28 @@ This repository is intentionally **learning-first**: each phase is small, review
 
 ---
 
+## Run Locally
+
+Create a virtual environment, install deps, and start the API:
+
+```bash
+python -m venv .venv
+source .venv/bin/activate
+pip install -e ".[dev]"
+uvicorn app.main:app --reload
+```
+
+Example requests:
+
+```bash
+curl "http://127.0.0.1:8000/health"
+curl "http://127.0.0.1:8000/hello?name=Ada"
+```
+
+Note: `/hello` requires the `name` query parameter.
+
+---
+
 ## Learning Phases (Extended Roadmap)
 
 Each phase includes **what you build** and **what you learn**. Keep PRs small and reviewable.
