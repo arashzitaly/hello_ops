@@ -134,7 +134,7 @@ Each phase includes **what you build** and **what you learn**. Keep PRs small an
 
 ---
 
-## Repository Status
+## Repository Status. 
 
 - Current phase: **TBD**
 - CI status: **TBD**
